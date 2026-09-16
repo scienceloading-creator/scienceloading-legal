@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScienceLoading Uploader — Authorization Complete</title>
+<style>
+  :root {
+    --bg: #faf6f0; --surface: #ffffff; --border: #e3d8c8;
+    --text: #241c14; --text-muted: #6b5d4d;
+    --accent: #b6612a; --accent-strong: #8f4a1e; --mono-chip: #efe4d3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15100c; --surface: #1c1610; --border: #3a2d1e;
+      --text: #f3ece2; --text-muted: #b3a494;
+      --accent: #d9834f; --accent-strong: #f0a874; --mono-chip: #241b13;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); }
+  body {
+    color: var(--text); font-family: -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.6; padding-inline: 20px; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 560px; margin: 0 auto; padding-block: 64px 48px; }
+  h1 { font-size: 24px; margin: 0 0 8px; }
+  p.lede { color: var(--text-muted); margin: 0 0 32px; }
+  .box {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px;
+  }
+  .label {
+    font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;
+  }
+  #code {
+    font-family: ui-monospace, "IBM Plex Mono", monospace; font-size: 14px;
+    background: var(--mono-chip); border-radius: 8px; padding: 14px;
+    word-break: break-all; user-select: all; margin: 0 0 14px;
+  }
+  button {
+    font: inherit; font-weight: 600; font-size: 14px; cursor: pointer;
+    background: var(--accent); color: #fff8f0; border: none;
+    border-radius: 8px; padding: 10px 18px;
+  }
+  button:hover { background: var(--accent-strong); }
+  button:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 2px; }
+  .error { color: #b3413a; }
+  .steps { margin-top: 28px; color: var(--text-muted); font-size: 14px; }
+  .steps ol { padding-left: 20px; }
+  .steps li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1 id="heading">Authorization complete</h1>
+  <p class="lede" id="lede">Copy the code below and paste it into the terminal running the upload script.</p>
+  <div class="box">
+    <div class="label">Authorization code</div>
+    <div id="code">—</div>
+    <button id="copyBtn">Copy code</button>
+  </div>
+  <div class="steps">
+    <ol>
+      <li>Click "Copy code" above (or select the text and copy it manually).</li>
+      <li>Switch back to the terminal running <code>scripts/tiktok_auth.js</code>.</li>
+      <li>Paste it when prompted, then press Enter.</li>
+    </ol>
+  </div>
+</div>
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var code = params.get('code');
+  var error = params.get('error');
+  var codeEl = document.getElementById('code');
+  if (error) {
+    document.getElementById('heading').textContent = 'Authorization failed';
+    document.getElementById('lede').textContent = 'TikTok returned an error - see below.';
+    codeEl.textContent = error + (params.get('error_description') ? ': ' + params.get('error_description') : '');
+    codeEl.classList.add('error');
+    document.getElementById('copyBtn').style.display = 'none';
+  } else if (code) {
+    codeEl.textContent = code;
+    document.getElementById('copyBtn').addEventListener('click', function () {
+      navigator.clipboard.writeText(code).then(function () {
+        var btn = document.getElementById('copyBtn');
+        var original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(function () { btn.textContent = original; }, 1500);
+      });
+    });
+  } else {
+    document.getElementById('heading').textContent = 'No code found';
+    document.getElementById('lede').textContent = 'This page is only meaningful right after TikTok redirects here during authorization.';
+    codeEl.textContent = 'n/a';
+    document.getElementById('copyBtn').style.display = 'none';
+  }
+</script>
+</body>
+</html>
