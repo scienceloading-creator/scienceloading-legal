@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScienceLoading Uploader — Privacy Policy &amp; Terms of Service</title>
+<meta name="description" content="Privacy Policy and Terms of Service for the ScienceLoading Uploader automation tool.">
+<style>
+  :root {
+    --bg: #faf6f0;
+    --surface: #ffffff;
+    --surface-2: #f2ebe1;
+    --border: #e3d8c8;
+    --text: #241c14;
+    --text-muted: #6b5d4d;
+    --accent: #b6612a;
+    --accent-strong: #8f4a1e;
+    --accent-soft: #f3e0cf;
+    --accent-ink: #fff8f0;
+    --mono-chip: #efe4d3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15100c;
+      --surface: #1c1610;
+      --surface-2: #221a12;
+      --border: #3a2d1e;
+      --text: #f3ece2;
+      --text-muted: #b3a494;
+      --accent: #d9834f;
+      --accent-strong: #f0a874;
+      --accent-soft: #3a2416;
+      --accent-ink: #2b1508;
+      --mono-chip: #241b13;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15100c;
+    --surface: #1c1610;
+    --surface-2: #221a12;
+    --border: #3a2d1e;
+    --text: #f3ece2;
+    --text-muted: #b3a494;
+    --accent: #d9834f;
+    --accent-strong: #f0a874;
+    --accent-soft: #3a2416;
+    --accent-ink: #2b1508;
+    --mono-chip: #241b13;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); }
+  body {
+    color: var(--text);
+    font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.65;
+    padding-inline: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; text-wrap: balance; color: var(--text); }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+
+  a { color: var(--accent-strong); }
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 2px;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-block: 48px 96px;
+  }
+
+  header.top {
+    position: sticky; top: 0;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    margin-inline: -20px; padding-inline: 20px;
+    z-index: 10;
+  }
+  .top-inner {
+    max-width: 760px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding-block: 14px; flex-wrap: wrap;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    font-family: "IBM Plex Mono", monospace; font-size: 13px; letter-spacing: 0.04em;
+    color: var(--text-muted); white-space: nowrap;
+  }
+  .brand .mark {
+    width: 22px; height: 22px; border-radius: 50%;
+    border: 2.5px solid var(--accent); border-right-color: transparent;
+    border-bottom-color: transparent; transform: rotate(-45deg);
+    display: inline-block; flex: none;
+  }
+  nav.jump { display: flex; gap: 4px; font-size: 13px; }
+  nav.jump a {
+    text-decoration: none; color: var(--text-muted);
+    padding: 6px 12px; border-radius: 999px; border: 1px solid transparent;
+  }
+  nav.jump a:hover, nav.jump a.active { color: var(--text); border-color: var(--border); background: var(--surface-2); }
+
+  .masthead { padding-block: 40px 8px; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent-strong); margin: 0 0 14px;
+  }
+  h1.title { font-size: clamp(32px, 5vw, 44px); font-weight: 600; margin: 0 0 10px; line-height: 1.12; }
+  .subtitle { color: var(--text-muted); font-size: 17px; max-width: 58ch; margin: 0; }
+  .meta-row {
+    display: flex; gap: 18px; flex-wrap: wrap; margin-top: 22px;
+    font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--text-muted);
+  }
+  .meta-row span { display: flex; align-items: center; gap: 6px; }
+  .meta-row b { color: var(--text); font-weight: 500; }
+
+  .summary {
+    margin-top: 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+  .summary h2 {
+    font-size: 15px; margin: 0 0 16px; font-family: "IBM Plex Mono", monospace;
+    text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; color: var(--text-muted);
+  }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin: 0; }
+  .fact dt {
+    font-family: "IBM Plex Mono", monospace; font-size: 11.5px; letter-spacing: 0.05em;
+    text-transform: uppercase; color: var(--text-muted); margin-bottom: 5px;
+  }
+  .fact dd { margin: 0; font-size: 15px; }
+  .fact .yes { color: var(--accent-strong); font-weight: 600; }
+  .fact .no { color: var(--text); font-weight: 600; }
+
+  section.doc { margin-top: 64px; scroll-margin-top: 76px; }
+  section.doc > h2.section-title {
+    display: flex; align-items: baseline; gap: 12px;
+    font-size: clamp(24px, 3.4vw, 30px); font-weight: 600;
+    padding-bottom: 14px; margin: 0 0 28px; border-bottom: 1px solid var(--border);
+  }
+  section.doc > h2.section-title .num {
+    font-family: "IBM Plex Mono", monospace; font-size: 14px; color: var(--accent-strong);
+    background: var(--accent-soft); padding: 3px 9px; border-radius: 6px; font-weight: 500;
+  }
+
+  article h3 {
+    font-size: 18px; font-weight: 600; margin: 34px 0 10px;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  article h3 .sec-num { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--text-muted); font-weight: 400; }
+  article p, article li { max-width: 65ch; color: var(--text); }
+  article p { margin: 0 0 14px; }
+  article ul, article ol { margin: 0 0 14px; padding-left: 22px; }
+  article li { margin-bottom: 6px; }
+  article strong { color: var(--text); }
+
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 18px; }
+  .chip {
+    font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--text);
+    background: var(--mono-chip); border: 1px solid var(--border);
+    padding: 5px 10px; border-radius: 7px;
+  }
+
+  .callout {
+    background: var(--surface-2); border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 18px 0;
+    font-size: 14.5px; color: var(--text-muted);
+  }
+  .callout strong { color: var(--text); }
+
+  footer.end {
+    margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--border);
+    color: var(--text-muted); font-size: 13.5px;
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  footer.end .mono { color: var(--text-muted); }
+
+  @media (max-width: 480px) {
+    .page { padding-block: 28px 64px; }
+    .masthead { padding-block: 28px 4px; }
+    nav.jump { font-size: 12px; }
+    nav.jump a { padding: 5px 9px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand"><span class="mark" aria-hidden="true"></span> ScienceLoading Uploader</div>
+    <nav class="jump" aria-label="Jump to section">
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#terms">Terms of Service</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+
+  <div class="masthead">
+    <p class="eyebrow">Legal — Uploader Policies</p>
+    <h1 class="title">Privacy Policy &amp; Terms of Service</h1>
+    <p class="subtitle">
+      For <strong>ScienceLoading Uploader</strong>, the personal publishing tool that posts
+      ScienceLoading's own science-explainer videos to its own social accounts.
+    </p>
+    <div class="meta-row">
+      <span>Effective <b>September 15, 2026</b></span>
+      <span>Operator <b>Jeremy Lindley</b></span>
+      <span>Contact <b>jeremylindley93@gmail.com</b></span>
+    </div>
+  </div>
+
+  <div class="summary">
+    <h2>At a glance</h2>
+    <dl class="facts">
+      <div class="fact"><dt>Who this app serves</dt><dd>Only its own operator — no public users</dd></div>
+      <div class="fact"><dt>Third-party data collected</dt><dd class="no">None</dd></div>
+      <div class="fact"><dt>Data sold or shared</dt><dd class="no">Never</dd></div>
+      <div class="fact"><dt>Advertising or tracking</dt><dd class="no">None</dd></div>
+      <div class="fact"><dt>What it does</dt><dd class="yes">Publishes the operator's own videos</dd></div>
+      <div class="fact"><dt>Where tokens are stored</dt><dd>Locally, on the operator's own machine</dd></div>
+    </dl>
+  </div>
+
+  <section class="doc" id="privacy">
+    <h2 class="section-title"><span class="num">§1</span> Privacy Policy</h2>
+    <article>
+
+      <h3><span class="sec-num">1.1</span> What this app is</h3>
+      <p>
+        ScienceLoading Uploader is a single-operator automation tool. It exists to let
+        Jeremy Lindley, the person who researches, writes, and produces every ScienceLoading
+        video, publish those videos directly to platforms including TikTok without repeating
+        the same manual upload steps by hand each time. It is not distributed to, or used by,
+        anyone other than its own operator.
+      </p>
+
+      <h3><span class="sec-num">1.2</span> Information we access</h3>
+      <p>Through TikTok's Content Posting API, this app accesses only:</p>
+      <div class="chip-row">
+        <span class="chip">OAuth access token</span>
+        <span class="chip">Account ID</span>
+        <span class="chip">Basic profile fields</span>
+        <span class="chip">Video publish status</span>
+      </div>
+      <p>
+        These are scoped entirely to the <strong>@scienceloading</strong> TikTok account — the
+        operator's own account. The app never requests, receives, or processes data belonging
+        to any other TikTok user, viewer, or third party.
+      </p>
+
+      <h3><span class="sec-num">1.3</span> Information we do <em>not</em> collect</h3>
+      <ul>
+        <li>No viewer analytics, cookies, or tracking pixels of any kind</li>
+        <li>No data from anyone who watches, likes, or comments on the published videos</li>
+        <li>No advertising identifiers, no location data, no device fingerprinting</li>
+        <li>No email addresses or contact lists beyond the operator's own</li>
+      </ul>
+
+      <h3><span class="sec-num">1.4</span> How information is stored and used</h3>
+      <p>
+        The access token issued by TikTok is stored in a local, non-public configuration file
+        on the operator's own computer. It is used solely to authenticate the two API calls this
+        tool makes: creating a video upload, and publishing it. The token is never transmitted
+        anywhere other than to TikTok's own API endpoints, and is never shared with any other
+        service, person, or company.
+      </p>
+      <div class="callout">
+        <strong>In plain terms:</strong> this app is the software equivalent of the operator
+        clicking "Upload" in the TikTok app themselves — it just does the clicking on their
+        behalf, for their own content, on their own account.
+      </div>
+
+      <h3><span class="sec-num">1.5</span> Data retention and deletion</h3>
+      <p>
+        Locally stored tokens persist only until the operator revokes them (via TikTok's own
+        account settings) or deletes the local configuration file. Deleting the file or revoking
+        access immediately and completely ends this app's ability to act on the account —
+        there is no separate copy of any credential kept anywhere else.
+      </p>
+
+      <h3><span class="sec-num">1.6</span> Changes to this policy</h3>
+      <p>
+        If this app's scope of data access ever changes, this page will be updated and the
+        "Effective" date above revised accordingly.
+      </p>
+    </article>
+  </section>
+
+  <section class="doc" id="terms">
+    <h2 class="section-title"><span class="num">§2</span> Terms of Service</h2>
+    <article>
+
+      <h3><span class="sec-num">2.1</span> Scope</h3>
+      <p>
+        These terms govern the use of ScienceLoading Uploader, a private automation tool with
+        exactly one intended user: its own operator, publishing content to accounts they own
+        and control. It is not offered, licensed, or made available to the public.
+      </p>
+
+      <h3><span class="sec-num">2.2</span> Acceptable use</h3>
+      <p>The app is used exclusively to:</p>
+      <ol>
+        <li>Publish video content that the operator created or holds rights to</li>
+        <li>Post to social accounts the operator owns and administers</li>
+        <li>Automate a task the operator could otherwise perform manually through each
+          platform's own app or website</li>
+      </ol>
+
+      <h3><span class="sec-num">2.3</span> Content responsibility</h3>
+      <p>
+        The operator is solely responsible for every video published through this tool,
+        including its accuracy, licensing, and compliance with each destination platform's
+        own community guidelines and terms of service. This tool performs no content
+        moderation of its own — it is a publishing mechanism, not an editorial one.
+      </p>
+
+      <h3><span class="sec-num">2.4</span> No warranty</h3>
+      <p>
+        This tool is provided as-is, built and maintained for one operator's own use. It comes
+        with no warranty of uptime, accuracy, or fitness for any purpose beyond that single use
+        case, and no service-level commitment of any kind.
+      </p>
+
+      <h3><span class="sec-num">2.5</span> Platform compliance</h3>
+      <p>
+        Use of this tool remains subject at all times to TikTok's own Developer Terms of
+        Service and Community Guidelines. Nothing in this document overrides or supersedes
+        those terms.
+      </p>
+
+      <h3><span class="sec-num">2.6</span> Termination</h3>
+      <p>
+        The operator may stop using this tool, delete it, or revoke its API access at any time,
+        for any reason, with immediate effect.
+      </p>
+    </article>
+  </section>
+
+  <footer class="end">
+    <span class="mono">scienceloading-uploader · policies v1</span>
+    <span>Questions: <a href="mailto:jeremylindley93@gmail.com">jeremylindley93@gmail.com</a></span>
+  </footer>
+
+</div>
+
+<script>
+  // Highlight the active jump-nav link based on scroll position.
+  (function () {
+    var links = Array.from(document.querySelectorAll('nav.jump a'));
+    var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    function onScroll() {
+      var y = window.scrollY + 100;
+      var activeIdx = 0;
+      sections.forEach(function (sec, i) { if (sec && sec.offsetTop <= y) activeIdx = i; });
+      links.forEach(function (a, i) { a.classList.toggle('active', i === activeIdx); });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+</body>
+</html>
